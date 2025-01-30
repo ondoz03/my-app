@@ -15,8 +15,6 @@ import {
 } from "lucide-react"
 
 import { NavMain } from "@/Components/Layouts/NavMain"
-import {NavMainSingle} from "@/Components/Layouts/NavMainSingle"
-import { NavProjects } from "@/components/Layouts/NavProjects"
 import { NavUser } from "@/components/Layouts/NavUser"
 import { TeamSwitcher } from "@/components/Layouts/TeamSwitcher"
 import { Link, usePage } from '@inertiajs/react';
@@ -54,28 +52,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         logo: Command,
         plan: "Free",
       },
-    ],
-    NavMainSingle: [
-        {
-            name: "Dashboard",
-            url: "/dashboard",
-            icon: Frame,
-        },
-        {
-            name: "Projects",
-            url: "/projects",
-            icon: PieChart,
-        },
-        {
-            name: "Calendar",
-            url: "/calendar",
-            icon: Map,
-        },
-        {
-            name: "Settings",
-            url: "/settings",
-            icon: Settings2,
-        },
     ],
     navMain: [
       {
@@ -178,23 +154,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         ],
       },
     ],
-    projects: [
-      {
-        name: "Project A",
-        url: "#",
-        icon: Frame,
-      },
-      {
-        name: "Project B",
-        url: "#",
-        icon: Frame,
-      },
-      {
-        name: "Project C",
-        url: "#",
-        icon: Frame,
-      },
-    ],
+
   };
 
   return (
@@ -203,9 +163,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
       <SidebarContent>
-        <NavMainSingle single={data.NavMainSingle} />
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
